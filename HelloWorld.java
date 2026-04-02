@@ -4,17 +4,16 @@ public class HelloWorld {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            System.out.print("Hello ");
+            String result = "";
 
-            int count = 0;
             for (String name : args) {
-                System.out.print(name);
-                count++;
-
-                if (count < args.length) {
-                    System.out.print(", ");
-                }
+                result += name + ", ";
             }
+
+            // Remove last ", "
+            result = result.substring(0, result.length() - 2);
+
+            System.out.println("Hello " + result);
         }
     }
 }
